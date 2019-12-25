@@ -1,0 +1,89 @@
+/**
+  * 覆盖 cube-ui 样式文件 
+  * 变量覆盖则在theme.styl里面修改
+**/
+
+/* cube-btn  */
+.cube-btn {
+  transition: background-color 0.3s;
+  font-size: 14px !important;
+}
+
+/* cube-scroll */
+.cube-pulldown-loaded span {
+  font-size: 14px;
+  color: #aaa;
+  position: relative;
+  padding-left: 20px;
+  line-height: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 3px;
+    height: 7px;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    transform: rotate(40deg);
+    z-index: 2;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+  }
+}
+// 修改Rate样式
+.cube-rate-item {
+  width: 20px !important;
+}
+.cube-rate-item .cube-rate-item-def {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACFklEQVRYR91Xy23bQBCdAfYedxAT4Ow1SgVOB5E7cCpIXEHiCqJUELmCWBVYqsA+7xBg3IHuojDBI2jBokRrVyJz8Fw5n8f5vVmmI0VVvxPRN5ib2bX3fnqMKz7GKIRwxcy/X9qa2ZdjQCQDKMvyvKqqByI6a4FfOueyLMuWKT+VDEBV/xDRuCPInYhcDgZAVT8R0f1rAZj5Ms/zu1gQ0Rkoy/JstVo9MPP5AedJpYgGoKo/iAidHyPRpYgCEJP6NqrYUuwFgHRXVXVhZmNmRsO1Oz4mC5gG7Ia5c27RNR0bABiv9XpdB32ly2MCd+nMAcbMZt77x2clbprrJzNfneI90RbZmYjIDR+Y60S/aerM/AsALM2sV+0lhxAemflDr27jnS0AYIdY4u1P0wSB1VOgqlidn09zl2w9E5FxDaCZhPl/LMWTc26E3bDZAyGEETNjVt8l/0uigZl9fN4FW5uwKIqxmYFuh5RrEZlsFlE7UlEUEzP7OhCCuu4vfe/lgoFGc1P3gwBUFb1w0WcWuthxbwaGAEBENyKCm2JLukqAy2fUZwaSAAzED/EZeJMAzOzWe79zc3Q14RAUvRARnPWHm3CgEvQKYNacVHNczGYGSseG6+QRXD95nteP2ZhF9JeI3rd0n3DlOuemWZbh+5Y0jIorGnXeWWJJiwjMiGDMjHMcF9M05bnVPGABpK65mU27Xs7/AHin9gSgN5N0AAAAAElFTkSuQmCC) !important;
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+  .cube-rate-item .cube-rate-item-def {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACFklEQVRYR91Xy23bQBCdAfYedxAT4Ow1SgVOB5E7cCpIXEHiCqJUELmCWBVYqsA+7xBg3IHuojDBI2jBokRrVyJz8Fw5n8f5vVmmI0VVvxPRN5ib2bX3fnqMKz7GKIRwxcy/X9qa2ZdjQCQDKMvyvKqqByI6a4FfOueyLMuWKT+VDEBV/xDRuCPInYhcDgZAVT8R0f1rAZj5Ms/zu1gQ0Rkoy/JstVo9MPP5AedJpYgGoKo/iAidHyPRpYgCEJP6NqrYUuwFgHRXVXVhZmNmRsO1Oz4mC5gG7Ia5c27RNR0bABiv9XpdB32ly2MCd+nMAcbMZt77x2clbprrJzNfneI90RbZmYjIDR+Y60S/aerM/AsALM2sV+0lhxAemflDr27jnS0AYIdY4u1P0wSB1VOgqlidn09zl2w9E5FxDaCZhPl/LMWTc26E3bDZAyGEETNjVt8l/0uigZl9fN4FW5uwKIqxmYFuh5RrEZlsFlE7UlEUEzP7OhCCuu4vfe/lgoFGc1P3gwBUFb1w0WcWuthxbwaGAEBENyKCm2JLukqAy2fUZwaSAAzED/EZeJMAzOzWe79zc3Q14RAUvRARnPWHm3CgEvQKYNacVHNczGYGSseG6+QRXD95nteP2ZhF9JeI3rd0n3DlOuemWZbh+5Y0jIorGnXeWWJJiwjMiGDMjHMcF9M05bnVPGABpK65mU27Xs7/AHin9gSgN5N0AAAAAElFTkSuQmCC) !important;
+  }
+}
+.cube-rate-item_active .cube-rate-item-def {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACNElEQVRYR+1XTXISQRh9b7BMZSVLqzSAJxBPQG7gsBzc4Ak0J0hyAvEEjguZJeQEwgmSI8BEq1yyJJb0s3oqUEBmsHsEV/b6fa/f9339/TRR8tQSnVN6b80NeXYbMS5DxTJGJ4m6AfRp3daAb8uI8BbwNFHjSLoGUd0QL8x4zBeTNmc+TnkLqPfNAESYe4kwnHaC9sEEPE90WoG+7rrAiO3bDoeuIpwj0BioqrmuATR2knumwllALVlcEDx38swjFU4CXEK/Lcw1FbkCbLgXd2hRJqQYPnjxLmEQZoJiBcGocoRxUXWsBNjyeiy0CNkL81+5y8XFmJHA0cLg6vsb3ixhtN6auflAsPt3/B7WNjpkL414yZ117cFZBirpI+uJURnjvdjYkq0nxubj5V4IfUmEMfMGiy9PWbwdYFkV1BIzJPC6LFEZOwFXaRSEmYD7Njv6Z6kQpjxm0/aGVR949kXNR4GsiCdlPPKx+WX4atkLNjrhSV9hQA18yHyxEs/SDnurRrRNUOsveiTf+RK74Jd5X8fmzoKDlOZa3v8soG9GIFouXrliiqZjfgQOIEDQZRpVLrYFFwmwS2fT1TsXnJ+AA8yH/wIEfU6jyoOdo6gM9z+ihfG0E5y6PcIDvAHsU4DtaAbsfYs4shtzANMlaPfIwjlit5+0U8k+sy6NaAKivoEUpqLinwjiHxEn20TZJj1HGEjdvCbm1YjuJ2MMoSriRmLs893KNmwbFTHLuSHjop/zb4pxF9lieiRlAAAAAElFTkSuQmCC) !important;
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+  .cube-rate-item_active .cube-rate-item-def {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACNElEQVRYR+1XTXISQRh9b7BMZSVLqzSAJxBPQG7gsBzc4Ak0J0hyAvEEjguZJeQEwgmSI8BEq1yyJJb0s3oqUEBmsHsEV/b6fa/f9339/TRR8tQSnVN6b80NeXYbMS5DxTJGJ4m6AfRp3daAb8uI8BbwNFHjSLoGUd0QL8x4zBeTNmc+TnkLqPfNAESYe4kwnHaC9sEEPE90WoG+7rrAiO3bDoeuIpwj0BioqrmuATR2knumwllALVlcEDx38swjFU4CXEK/Lcw1FbkCbLgXd2hRJqQYPnjxLmEQZoJiBcGocoRxUXWsBNjyeiy0CNkL81+5y8XFmJHA0cLg6vsb3ixhtN6auflAsPt3/B7WNjpkL414yZ117cFZBirpI+uJURnjvdjYkq0nxubj5V4IfUmEMfMGiy9PWbwdYFkV1BIzJPC6LFEZOwFXaRSEmYD7Njv6Z6kQpjxm0/aGVR949kXNR4GsiCdlPPKx+WX4atkLNjrhSV9hQA18yHyxEs/SDnurRrRNUOsveiTf+RK74Jd5X8fmzoKDlOZa3v8soG9GIFouXrliiqZjfgQOIEDQZRpVLrYFFwmwS2fT1TsXnJ+AA8yH/wIEfU6jyoOdo6gM9z+ihfG0E5y6PcIDvAHsU4DtaAbsfYs4shtzANMlaPfIwjlit5+0U8k+sy6NaAKivoEUpqLinwjiHxEn20TZJj1HGEjdvCbm1YjuJ2MMoSriRmLs893KNmwbFTHLuSHjop/zb4pxF9lieiRlAAAAAElFTkSuQmCC) !important;
+  }
+}
+// 改变多选框字体样式
+.cube-checkbox_checked {
+  .cube-checkbox-label {
+    color: $primary;
+  }
+}
+.radios {
+  .border-right-1px::after {
+    border: none;
+  }
+}
+.cube-radio-group[data-horz='true']::after {
+  border: none !important;
+}
+.cube-select {
+  width: 100%;
+  &::after {
+    border: 0 !important;
+  }
+}
+
+.cube-switch .cube-switch-ui {
+  height: 20px !important;
+  width: 40px !important;
+  &::after {
+    width: 20px !important;
+  }
+}

@@ -1,0 +1,19 @@
+@import 'variables.scss';
+@import 'mixin.scss';
+@import 'reset.scss';
+@import 'utils.scss';
+@import 'transition.scss';
+@import 'cube.scss';
+
+a,
+.router-link-exact-active {
+  color: $primary;
+}
+.bg-primary {
+  background: $primary;
+}
+
+// cube-loading
+.cube-loading-spinners {
+  font-size: 1em;
+}
