@@ -1,4 +1,4 @@
-import { constantRouterMap } from '@/router/router'
+import { routerMap } from '@/router'
 
 const app = {
   state: {
@@ -14,7 +14,7 @@ const app = {
           }
         }
       }
-      recursiveComponents(constantRouterMap)
+      recursiveComponents(routerMap)
       return cachedPages
     })()
   },

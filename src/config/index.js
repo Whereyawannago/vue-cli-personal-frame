@@ -7,11 +7,9 @@ const AppConfig = {
   apiTimeout: 20000, // 接口超时时间(单位:ms)
 }
 
-export default AppConfig
-
 // api列表
 export const apiUrl = (() => {
-  url = {}
+  const url = {}
 
   Object.keys(url).forEach(key => (url[key] = AppConfig.localhost + url[key]))
 })
