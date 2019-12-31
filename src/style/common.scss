@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+
+div,
+dl,
+dt,
+dd,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+ol,
+ul,
+li,
+table,
+th,
+td,
+p,
+span,
+a {
+  border: 0;
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: Tahoma, Arial, Helvetica, 'MicroSoft yahei';
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+  color: #666;
+}
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.page-content {
+  width: 92%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.inner-content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.common-block {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.flex-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    :style="{'height': bodyHeight}"
+  >
     <transition :name="transitionName">
       <!-- <keep-alive :inclue="cachedPages"> -->
       <router-view
@@ -34,7 +37,8 @@ export default {
   },
   mounted () {
     // let heights = document.body.clientHeight
-    // this.bodyHeight = heights + 'px'
+    let heights = window.innerHeight
+    this.bodyHeight = heights + 'px'
   },
   methods: {
     refresh (e, txt) {
@@ -54,9 +58,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/style/common.scss';
 #app {
   width: 100%;
   height: 100%;
+  background-color: #f7f4f4;
 }
 </style>

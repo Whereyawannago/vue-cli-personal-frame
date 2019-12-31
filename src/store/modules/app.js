@@ -14,6 +14,7 @@ const app = {
           }
         }
       }
+      window.console.log(routerMap)
       recursiveComponents(routerMap)
       return cachedPages
     })()

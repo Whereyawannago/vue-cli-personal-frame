@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // import config from '../config'
-import store from '@/store'
+// import store from '@/store'
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -22,6 +22,26 @@ let routerMap = [
     path: '/home',
     name: 'home',
     component: resolve => require(['@/views/home'], resolve)
+  },
+  {
+    path: '/recordList',
+    name: 'recordList',
+    component: resolve => require(['@/views/record/record'], resolve)
+  },
+  {
+    path: '/recordDetail',
+    name: 'recordDetail',
+    component: resolve => require(['@/views/record/recordDetail'], resolve)
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: resolve => require(['@/views/user/user'], resolve)
+  },
+  {
+    path: '/keyboard',
+    name: 'keyboard',
+    component: resolve => require(['@/views/bindCar/keyboard'], resolve)
   }
 ]
 
@@ -32,37 +52,42 @@ const router = new Router({
   routes: routerMap
 })
 
-const { go, push, replace, back, forword } = router
+// const { go, push, replace, back, forword } = router
+// const { go, back } = router
 
-router.go = (location) => {
-  if (location > 0) {
-    store.dispatch('updateTransitionName', 'slide-left')
-  } else if (location < 0) {
-    store.dispatch('updateTransitionName', 'slide-right')
-  }
-  go.call(this, location)
-}
+// router.go = (location) => {
+//   if (location > 0) {
+//     store.dispatch('updateTransitionName', 'slide-left')
+//   } else if (location < 0) {
+//     store.dispatch('updateTransitionName', 'slide-right')
+//   }
+//   go.call(this, location)
+// }
 
-router.push = (location) => {
-  if (location.back) {
-    store.dispatch('updateTransitionName', 'slide-right')
-  } else {
-    store.dispatch('updateTransitionName', 'slide-left')
-  }
-  push.call(this, location)
-}
-router.replace = (location) => {
-  store.dispatch('updateTransitionName', '')
-  replace.call(this, location)
-}
-router.back = (location) => {
-  store.dispatch('updateTransitionName', 'slide-right')
-  back.call(this, location)
-}
-router.forword = (location) => {
-  store.dispatch('updateTransitionName', 'slide-left')
-  forword.call(this, location)
-}
+// router.push = (location) => {
+//   let that = this
+//   if (location.back) {
+//     store.dispatch('updateTransitionName', 'slide-right')
+//   } else {
+//     store.dispatch('updateTransitionName', 'slide-left')
+//   }
+//   push.call(that, location)
+// }
+
+// router.replace = (location) => {
+//   store.dispatch('updateTransitionName', '')
+//   replace.call(this, location)
+// }
+
+// router.back = (location) => {
+//   store.dispatch('updateTransitionName', 'slide-right')
+//   back.call(this, location)
+// }
+
+// router.forword = (location) => {
+//   store.dispatch('updateTransitionName', 'slide-left')
+//   forword.call(this, location)
+// }
 // Router.beforeEach(async (to, from, next) => {
 
 // })
