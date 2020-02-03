@@ -22,26 +22,6 @@ let routerMap = [
     path: '/home',
     name: 'home',
     component: resolve => require(['@/views/home'], resolve)
-  },
-  {
-    path: '/recordList',
-    name: 'recordList',
-    component: resolve => require(['@/views/record/record'], resolve)
-  },
-  {
-    path: '/recordDetail',
-    name: 'recordDetail',
-    component: resolve => require(['@/views/record/recordDetail'], resolve)
-  },
-  {
-    path: '/user',
-    name: 'user',
-    component: resolve => require(['@/views/user/user'], resolve)
-  },
-  {
-    path: '/keyboard',
-    name: 'keyboard',
-    component: resolve => require(['@/views/bindCar/keyboard'], resolve)
   }
 ]
 

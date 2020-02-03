@@ -8,6 +8,7 @@ import '@/assets/sass/_transition.scss'
 import 'amfe-flexible'
 
 Vue.config.productionTip = false
+Vue.prototype.$moment = 'moment'
 
 new Vue({
   router,

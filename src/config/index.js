@@ -1,18 +1,20 @@
 const AppConfig = {
   version: 'v1.0.0',
   browser: null,
-  localhost: '', //接口地址前缀
-  // isApp: process.env.VUE_APP_isAppEnv === 'yes', // app环境
+  // localhost: process.env.NODE_ENV === 'development' ? 'http://test.server.yy:9191/gtw' : 'https://weixin.xzfwzx.zjtz.gov.cn/gtw',
+  localhost: '', //接口地址前缀,根据生产环境开发环境改变
   // updateTime: '2019/6/18 下午3:00:05', // 格式:new Date().toLocaleString()
-  apiTimeout: 20000, // 接口超时时间(单位:ms)
 }
 
 // api列表
 export const apiUrl = (() => {
-  const url = {}
+  const url = {
+    // 如停车记录接口 recordList: '/api/v1/car/listParkRecord',
+  }
 
   Object.keys(url).forEach(key => (url[key] = AppConfig.localhost + url[key]))
-})
+  return url
+})()
 
 function initApp () {
   if (window.navigator && window.navigator.userAgent) {

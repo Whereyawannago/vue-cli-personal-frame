@@ -1,17 +1,15 @@
 import axios from 'axios'
 import router from '@/router/router'
 import store from '@/store'
-import config from '@/config'
-import { Toast, Dialog } from 'cube-ui'
+import { Toast } from 'cube-ui'
 import { removeToken } from '@/utils/auth'
 
 const loadingToast = Toast.$create({ time: 0, text: '加载中...' }, false)
 // 请求加载计数对象
 const requestCount = { count: 0, urls: [] }
-let cunt = 0 // 控制跳登录的次数
 
 const service = axios.create({
-  timeoutL: AppConfig.timeout
+  timeout: 20000
 })
 
 service.interceptors.request.use(config => {
@@ -45,9 +43,12 @@ service.interceptors.response.use(config => {
 
     if (error.response) {
       switch (error.response.status) {
+        // 根据业务需求调整返回状态执行代码, 如返回登录页面
         case 401:
           removeToken()
-          // loginDialog.show()
+          // router.push({
+          //   name: 'login'
+          // })
           return Promise.reject({ msg: '', status: error.response.status })
       }
       return Promise.reject({ msg: error.response.statusText })
@@ -61,20 +62,12 @@ service.interceptors.response.use(config => {
 function responseHandler (response) {
   if (!response) return
   const isHideError = response.config.isHideError || undefined
-  const isShowLoading = response.config.isShowLoading || undefined
-
-  const index = requestCount.url.indexOf(response.config.url)
-  if (isShowLoading && index != -1) {
-    requestCount.count--
-    requestCount.urls.splice(index, 1)
-    requestCount.count === 0 && loadingToast.hide()
-  }
 
   const data = response ? response.data : undefined
   if (!data || !data.result) {
     return isHideError || Promise.reject({ msg: '服务器错误,请联系后台!' })
   }
-
+  // 接口返回错误码，判断是否成功返回数据
   switch (data.result) {
     case 1:
       return Promise.resolve(data)
@@ -97,15 +90,27 @@ const API = {
   get: axios.get,
   post: axios.post,
   // 以FormData方式发送post请求并进行全局错误捕获
-  $post: (url, data, config, endpoint = config.AppConfig.localhost) => {
+  // $post: (url, data, config, endpoint = config.AppConfig.localhost) => {
+  //   return service
+  //     .post(endpoint ? endpoint + url : url, data, Object.assign({}, baseFormCfg, config))
+  //     .then(responseHandler)
+  //     .catch(errorHandler)
+  // },
+  // $get: (url, config, endpoint = config.AppConfig.localhost) => {
+  //   return service
+  //     .get(endpoint ? endpoint + url : url, config)
+  //     .then(responseHandler)
+  //     .catch(errorHandler)
+  // }
+  $get: (url) => {
     return service
-      .post(endpoint ? endpoint + url : url, data, Object.assign({}, baseFormCfg, config))
+      .get(url)
       .then(responseHandler)
       .catch(errorHandler)
   },
-  $get: (url, config, endpoint = config.AppConfig.localhost) => {
+  $post: (url, data) => {
     return service
-      .get(endpoint ? endpoint + url : url, config)
+      .post(url, data)
       .then(responseHandler)
       .catch(errorHandler)
   }

@@ -2,9 +2,12 @@
   <div
     id="app"
     :style="{'height': bodyHeight}"
+    v-loading="isLoading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(0, 0, 0, 0.5)"
   >
     <transition :name="transitionName">
-      <!-- <keep-alive :inclue="cachedPages"> -->
       <router-view
         class="page-container"
         ref="page"
@@ -27,7 +30,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['cachedPages', 'transitionName'])
+    ...mapGetters(['cachedPages', 'transitionName', 'isloading'])
   },
   data () {
     return {

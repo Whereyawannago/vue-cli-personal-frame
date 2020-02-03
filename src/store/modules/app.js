@@ -21,12 +21,14 @@ const app = {
   },
   mutations: {
     UPDATE_HEADER_TITLE (state, title) {
-      // TODO:增加app header title修改
       state.headerTitle = title
       document.title = title
     },
     UPDATE_TRANDITION_NAME (state, name) {
       state.transitionName = name
+    },
+    CHANGE_LOADING (state, name) {
+      state.isLoading = name
     }
   },
   actions: {

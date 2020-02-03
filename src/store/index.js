@@ -12,6 +12,8 @@ export default new Vuex.Store({
   },
   getters: {
     cachedPages: state => state.app.cachedPages,
-    transitionName: state => state.app.transitionName
+    transitionName: state => state.app.transitionName,
+    isLoading: state => state.app.isLoading,
+    userInfo: state => state.user.userInfo
   }
 })
